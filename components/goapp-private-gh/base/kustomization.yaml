@@ -1,0 +1,12 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+commonLabels:         
+  argocd/app-name: goapp-private-gh
+  janus-idp.io/tekton: goapp-private-gh
+  backstage.io/kubernetes-id: goapp-private-gh
+  backstage.io/kubernetes-namespace: rhtap-app 
+  app.kubernetes.io/part-of: goapp-private-gh
+resources:
+- deployment.yaml
+- route.yaml
+- service.yaml
